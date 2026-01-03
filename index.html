@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royalty Creations & Cleaning</title>
+    <style>
+        body { margin: 0; font-family: sans-serif; }
+        .hidden { display: none !important; }
+        
+        /* Navigation */
+        nav { background: #333; color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center; }
+        nav button { background: none; border: 1px solid white; color: white; padding: 5px 10px; border-radius: 4px; }
+
+        /* Gateway Screen */
+        #gateway { height: 100vh; display: flex; flex-direction: column; }
+        @media (min-width: 768px) { #gateway { flex-direction: row; } }
+
+        .split-screen { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; text-align: center; cursor: pointer; }
+        
+        .jewelry-side { background-color: #fce4ec; color: #880e4f; }
+        .cleaning-side { background-color: #e3f2fd; color: #0d47a1; }
+
+        h1 { font-size: 2rem; margin-bottom: 10px; }
+        .btn-main { padding: 15px 30px; font-size: 1.2rem; border: none; border-radius: 30px; margin-top: 20px; font-weight: bold; }
+        .btn-jewelry { background-color: #880e4f; color: white; }
+        .btn-cleaning { background-color: #0d47a1; color: white; }
+
+        /* Jewelry Screen */
+        #jewelry-screen { padding: 20px; background-color: #fff0f5; min-height: 100vh; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; }
+        .product-card { background: white; border-radius: 10px; overflow: hidden; text-align: center; padding-bottom: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .product-img { width: 100%; height: 200px; object-fit: cover; }
+        .price { font-size: 1.1rem; color: #880e4f; font-weight: bold; margin: 5px 0; }
+        
+        /* Cleaning Screen */
+        #cleaning-screen { padding: 20px; background-color: #f5f5f5; min-height: 100vh; }
+        .service-card { background: white; padding: 20px; margin-bottom: 15px; border-radius: 8px; border-left: 5px solid #0d47a1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+    </style>
+</head>
+<body>
+
+    <nav id="navbar" class="hidden">
+        <span id="nav-title">Royalty Services</span>
+        <button onclick="goHome()">Back</button>
+    </nav>
+
+    <div id="gateway">
+        <div class="split-screen jewelry-side" onclick="showJewelry()">
+            <h1>Jewelry</h1>
+            <p>Handmade bracelets & earrings</p>
+            <button class="btn-main btn-jewelry">Shop Now</button>
+        </div>
+        <div class="split-screen cleaning-side" onclick="showCleaning()">
+            <h1>Cleaning</h1>
+            <p>Home & Office Services</p>
+            <button class="btn-main btn-cleaning">Book Now</button>
+        </div>
+    </div>
+
+    <div id="jewelry-screen" class="hidden">
+        <h2 style="text-align: center; color: #880e4f;">Royalty Creations</h2>
+        <div class="product-grid">
+            
+            <div class="product-card">
+                <img src="earrings.png" class="product-img">
+                <h3>Afro-Centric Earrings</h3>
+                <div class="price">$13.00</div>
+            </div>
+
+            <div class="product-card">
+                <img src="pink_bracelets.png" class="product-img">
+                <h3>Pink Marble Stack</h3>
+                <div class="price">$12.00</div>
+            </div>
+
+             <div class="product-card">
+                <img src="jamaica.png" class="product-img">
+                <h3>Custom Jamaica</h3>
+                <div class="price">$15.00</div>
+            </div>
+            
+            <div class="product-card">
+                <img src="blue_green.png" class="product-img">
+                <h3>Ocean Beads</h3>
+                <div class="price">$10.00</div>
+            </div>
+        </div>
+        <br>
+        <div style="text-align:center;">
+            <a href="mailto:your-email@example.com" class="btn-main btn-jewelry" style="text-decoration:none;">Email to Order</a>
+        </div>
+    </div>
+
+    <div id="cleaning-screen" class="hidden">
+        <h2 style="text-align: center; color: #0d47a1;">Cleaning Services</h2>
+        
+        <div class="service-card">
+            <h3 style="color: #0d47a1;">Standard Clean</h3>
+            <p>Dusting, vacuuming, mopping, bathroom & kitchen.</p>
+            <p><strong>Starting at $100</strong></p>
+        </div>
+
+        <div class="service-card">
+            <h3 style="color: #0d47a1;">Deep Clean</h3>
+            <p>Intensive cleaning including baseboards and appliances.</p>
+            <p><strong>Starting at $250</strong></p>
+        </div>
+        <div style="text-align:center;">
+             <a href="mailto:your-email@example.com" class="btn-main btn-cleaning" style="text-decoration:none;">Email to Book</a>
+        </div>
+    </div>
+
+    <script>
+        function showJewelry() {
+            document.getElementById('gateway').classList.add('hidden');
+            document.getElementById('jewelry-screen').classList.remove('hidden');
+            document.getElementById('cleaning-screen').classList.add('hidden');
+            document.getElementById('navbar').classList.remove('hidden');
+        }
+        function showCleaning() {
+            document.getElementById('gateway').classList.add('hidden');
+            document.getElementById('jewelry-screen').classList.add('hidden');
+            document.getElementById('cleaning-screen').classList.remove('hidden');
+            document.getElementById('navbar').classList.remove('hidden');
+        }
+        function goHome() {
+            document.getElementById('gateway').classList.remove('hidden');
+            document.getElementById('jewelry-screen').classList.add('hidden');
+            document.getElementById('cleaning-screen').classList.add('hidden');
+            document.getElementById('navbar').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
