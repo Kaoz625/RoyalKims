@@ -1,35 +1,35 @@
 # Replit Agent Task: RoyalKims
 
 ## Goal
-Build a polished combined website for Royal Kims covering both jewelry sales and professional cleaning services, with compelling copy, client testimonials, and clear service/product sections.
+Redesign the RoyalKims site from its current basic split-screen prototype into a polished dual-service storefront for "Royalty Creations & Cleaning" — a luxury jewelry showcase and professional cleaning services hub — with real product/service listings, testimonials, and a working contact form.
 
 ## Tasks
-1. Build a hero section: elegant dark/gold aesthetic, tagline combining "Fine Jewelry" and "Premium Cleaning Services", and two CTA buttons: "Shop Jewelry" and "Book Cleaning"
-2. Create a Jewelry section: product grid with 6+ placeholder items (rings, necklaces, bracelets, earrings) with names, materials, and prices — link each to a simple product detail modal
-3. Build a Cleaning Services section: cards for each service type (residential cleaning, deep cleaning, move-in/move-out, office cleaning) with pricing tiers and a "Get a Quote" CTA
-4. Add a Testimonials section: 5 realistic client testimonials alternating between jewelry buyers and cleaning service clients — include star ratings and client first names
-5. Build a Contact/Booking section: contact form (name, email, phone, service type, message) that submits to Supabase `inquiries` table; include business phone and email
-6. Add an About section: family-owned business story, years of experience, commitment to quality — warm, personal tone
-7. Implement a simple cart system for jewelry (localStorage) with checkout form
-8. Add Open Graph meta tags (og:title, og:description, og:image) and JSON-LD for LocalBusiness schema
-9. Ensure mobile-first responsive design throughout
-10. Deploy to Cloudflare Pages (static build)
+1. Keep the split-gateway concept (Jewelry side / Cleaning side) but redesign it: use a full-screen hero with animated background, gold gradient for jewelry and deep navy/silver for cleaning, modern card-flip or slide transition when selecting a side
+2. **Jewelry section**: product gallery grid (8–12 items: rings, necklaces, bracelets, earrings) with placeholder images, product name, price, and a "Inquire" button that opens a mailto or modal contact form; include a "Custom Orders" CTA section; gold (#C9A84C) and blush accent palette
+3. **Cleaning services section**: service list cards (Residential Deep Clean, Move-In/Move-Out, Office/Commercial, Carpet & Upholstery, Window Cleaning) with icon, description, and "Get a Quote" CTA; navy (#0A1628) and silver accent palette
+4. **Testimonials section** (shared footer): 4 customer quotes with star rating, customer first name + neighborhood (e.g., "Maria T. — Crown Heights"), carousel or card layout
+5. **Contact / Quote form**: single unified form with a dropdown to select Jewelry Inquiry or Cleaning Quote, fields for name/email/phone/message, and a submit button — use Formspree or Netlify Forms (since this is static HTML); add honeypot field for spam prevention
+6. Add a sticky nav bar on both sub-pages with the Royal Kims logo, links to Jewelry / Cleaning / Testimonials / Contact, and a phone number click-to-call
+7. Typography: use Google Fonts — Playfair Display for headings, Lato for body — to convey luxury
+8. Ensure full mobile responsiveness (375px min), large touch targets for CTAs
+9. Keep it as a single HTML file with embedded CSS and JS, or split into index.html + style.css + script.js — no build tool required
+10. Add basic SEO meta tags: title, description, OG tags for both service categories
 
 ## Tech Stack
-- React 18 + TypeScript
-- Vite
-- Tailwind CSS
-- Supabase (contact form / inquiry storage)
-- Cloudflare Pages (static deploy)
+- Vanilla HTML5 / CSS3 / JavaScript
+- Google Fonts (Playfair Display + Lato)
+- Formspree for contact form (free tier, no backend needed)
+- CSS Grid and Flexbox for layout
 
 ## Deploy Target
-Cloudflare Pages — connect `Kaoz625/RoyalKims`. Build command: `npm run build`, output: `dist/`. Never Vercel.
+Cloudflare Pages (static site). Never Vercel.
 
 ## Done When
-- [ ] Jewelry grid and cleaning services cards both render with placeholder content
-- [ ] 5 testimonials are displayed with star ratings
-- [ ] Contact form submits to Supabase
-- [ ] Site has gold/dark elegant aesthetic throughout
-- [ ] Fully mobile-responsive at 375px
-- [ ] Open Graph and JSON-LD tags present
-- [ ] All changes pushed to `Kaoz625/RoyalKims` main branch
+- [ ] Split gateway renders with polished animations on click
+- [ ] Jewelry gallery shows at least 8 product cards with images, name, price, and Inquire button
+- [ ] Cleaning section shows at least 5 service cards with icon, description, and CTA
+- [ ] Testimonials carousel/grid shows at least 4 reviews with star ratings
+- [ ] Contact form submits via Formspree without page reload (AJAX or fetch)
+- [ ] Site is fully responsive on mobile (375px)
+- [ ] SEO meta tags present in <head>
+- [ ] No broken links or console errors
